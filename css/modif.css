@@ -1,0 +1,11 @@
+main{
+    width: 35rem;
+}
+main div section{
+    margin: 0rem;
+    margin-top: 5rem;
+    background-color: aqua;
+}
+#ex{
+    margin-bottom: 1rem;
+}

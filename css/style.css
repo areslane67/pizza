@@ -1,0 +1,49 @@
+/* reset */
+
+html{
+    font-size:62.5%;
+    scroll-behavior:smooth;
+    height: 100vw;
+}
+body{
+    font: 1.6rem 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+section,figure,h1,h2,h3,h4,h5,h6,ol,p,ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+*{ 
+    box-sizing:border-box;
+}
+button, #ex{
+    padding: 1rem ;
+    border: 0;
+    background-color: transparent;
+    background-color: #1a73e8;
+    width: 100%;
+    color: white;
+}
+
+/* main */
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 150rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto ;
+}
+main section{
+    margin: 3rem;
+}
+img.zeb{
+    width: 15rem;
+    height: 15rem;
+}
