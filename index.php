@@ -23,20 +23,16 @@
     </header>
     <main>
         <?php
-        // Enable error reporting
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        // Include necessary files
         include_once("./src/data.inc.php");
 
         try {
-            // Assume the database connection code is present in data.inc.php
             $stmt = $_bdd->prepare("SELECT * FROM pizza");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Display pizza details using data from the database
             foreach ($result as $pizza) {
                 echo "
                 <section data-uid=" . $pizza['NROPIZZ'] . ">
@@ -44,15 +40,14 @@
                         <img src=\"" . $pizza['URLPIZZ'] . "\" class=\"zeb\">
                     </div>
                     <ul class=\"right\">
-                        <li>  <p class=\"mail\">" . $pizza['DESIGNPIZZ'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $pizza['TARIFPIZZ'] . "</p> </li>
+                        <li>  <p class=\"nom\">" . $pizza['DESIGNPIZZ'] . "</p> </li>
+                        <li>  <p class=\"prix\">" . $pizza['TARIFPIZZ'] . "</p> </li>
                     </ul>
                     <a href=\"modifierP.php?NROPIZZ=" . $pizza['NROPIZZ'] . "\">modifier</a>
                 </section>
             ";
             }   
         } catch (Exception $e) {
-            // Print more debug information
             echo "Error: " . $e->getMessage();
         }
         ?>

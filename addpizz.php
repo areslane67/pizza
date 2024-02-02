@@ -14,7 +14,6 @@ include_once("./src/addpizz.inc.php");
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/formulaire.css">
     <title>Créer une Pizza</title>
-    <!-- Ajoutez ici vos balises de style, liens vers des fichiers CSS, etc. -->
 </head>
 <body>
     <header>
@@ -25,23 +24,21 @@ include_once("./src/addpizz.inc.php");
         </ul>
     </header>
     <main>
-        <!-- Formulaire de création -->
         <div class="ez">
             <h1>Créer une nouvelle pizza</h1>
             <form method="POST" action="">
-                <label>Design*
+                <label>Nom
                     <input type="text" name="design" required>
                 </label>
-                <label>Tarif*
+                <label>Tarif
                     <input type="text" name="tarif" required>
                 </label>
-                <label>URL de la photo*
+                <label>URL de la photo
                     <input type="url" name="url" required>
                 </label>
                 <input type="submit" name="create" value="Créer la pizza" id="ex">
             </form>
         </div>
     </main>
-    <!-- Ajoutez ici vos balises de script, liens vers des fichiers JS, etc. -->
 </body>
 </html>

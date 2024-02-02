@@ -14,7 +14,6 @@ include_once("./src/addcli.inc.php");
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/formulaire.css">
     <title>Ajouter un Client</title>
-    <!-- Ajoutez ici vos balises de style, liens vers des fichiers CSS, etc. -->
 </head>
 <body>
     <header>
@@ -25,37 +24,33 @@ include_once("./src/addcli.inc.php");
         </ul>
     </header>
     <main>
-        <!-- Formulaire d'ajout -->
         <div class="ez">
             <h1>Ajouter un nouveau client</h1>
             <form method="POST" action="">
-                <!-- Ajoutez vos champs de formulaire pour l'ajout d'un client -->
-                <!-- Assurez-vous d'utiliser les vrais noms de colonnes de votre table -->
-                <label>Nom*
+                <label>Nom
                     <input type="text" name="nom" required>
                 </label>
-                <label>Prénom*
+                <label>Prénom
                     <input type="text" name="prenom" required>
                 </label>
-                <label>Adresse*
+                <label>Adresse
                     <input type="text" name="adresse" required>
                 </label>
-                <label>Ville*
+                <label>Ville
                     <input type="text" name="ville" required>
                 </label>
-                <label>Code Postal*
+                <label>Code Postal
                     <input type="text" name="codepostal" required>
                 </label>
-                <label>Titre*
+                <label>Titre
                     <input type="text" name="titre" required>
                 </label>
-                <label>Numéro de Téléphone*
+                <label>Numéro de Téléphone
                     <input type="text" name="nrotel" required>
                 </label>
                 <input type="submit" name="add" value="Ajouter le client" id="ex">
             </form>
         </div>
     </main>
-    <!-- Ajoutez ici vos balises de script, liens vers des fichiers JS, etc. -->
 </body>
 </html>

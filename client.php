@@ -20,32 +20,28 @@
     </header>
     <main>
         <?php
-        // Enable error reporting
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        // Include necessary files
         include_once("./src/data.inc.php");
         include_once("./src/deleteclient.inc.php");
 
 
         try {
-            // Assume the database connection code is present in data.inc.php
             $stmt = $_bdd->prepare("SELECT * FROM client");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Display pizza details using data from the database
             foreach ($result as $client) {
                 echo "
                 <section data-uid=" . $client['NROCLIE'] . ">
                     <ul class=\"right\">
-                        <li>  <p class=\"mail\">" . $client['NOMCLIE'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $client['PRENOMCLIE'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $client['ADRESSECLIE'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $client['VILLECLIE'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $client['CODEPOSTALCLIE'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $client['TITRECLIE'] . "</p> </li>
+                        <li>  <p class=\"nom\">" . $client['NOMCLIE'] . "</p> </li>
+                        <li>  <p class=\"prenom\">" . $client['PRENOMCLIE'] . "</p> </li>
+                        <li>  <p class=\"adresse\">" . $client['ADRESSECLIE'] . "</p> </li>
+                        <li>  <p class=\"ville\">" . $client['VILLECLIE'] . "</p> </li>
+                        <li>  <p class=\"code\">" . $client['CODEPOSTALCLIE'] . "</p> </li>
+                        <li>  <p class=\"titre\">" . $client['TITRECLIE'] . "</p> </li>
                         <li>  <p class=\"phone\">" . $client['NROTELCLIE'] . "</p> </li>
                     </ul>
                     <a href=\"modifierC.php?NROCLIE=" . $client['NROCLIE'] . "\">modifier</a>
@@ -54,7 +50,6 @@
             ";
             }   
         } catch (Exception $e) {
-            // Print more debug information
             echo "Error: " . $e->getMessage();
         }
         ?>

@@ -16,7 +16,6 @@ include_once("./src/updateP.inc.php");
     <link rel="stylesheet" href="./css/formulaire.css">
     <link rel="stylesheet" href="./css/modif.css">
     <title>Modifier Pizza</title>
-    <!-- Ajoutez ici vos balises de style, liens vers des fichiers CSS, etc. -->
 </head>
 <body>
     <header>
@@ -27,7 +26,6 @@ include_once("./src/updateP.inc.php");
         </ul>
     </header>
     <main>
-        <!-- Affichez les détails de la pizza -->
         <section data-uid="<?= $pizza_id ?>">
             <div class="left">
                 <img src="<?= $pizza['URLPIZZ'] ?>" class="zeb">
@@ -38,19 +36,16 @@ include_once("./src/updateP.inc.php");
             </ul>
         </section>
 
-        <!-- Formulaire de mise à jour -->
         <div class="ez">
             <h1>Modifier profil de la pizza</h1>
             <form method="POST" action="">
-                <!-- Ajoutez vos champs de formulaire avec les valeurs actuelles de la pizza -->
-                <!-- Assurez-vous d'utiliser les vrais noms de colonnes de votre table -->
-                <label>Design*
+                <label>Nom
                     <input type="text" name="design" value="<?= $pizza['DESIGNPIZZ'] ?>" required>
                 </label>
-                <label>Tarif*
+                <label>Tarif
                     <input type="text" name="tarif" value="<?= $pizza['TARIFPIZZ'] ?>" required>
                 </label>
-                <label>URL de la photo*
+                <label>URL de la photo
                     <input type="url" name="url" value="<?= $pizza['URLPIZZ'] ?>" required>
                 </label>
                 <input type="submit" name="submit" value="Modifier les informations" id="ex">
@@ -59,6 +54,5 @@ include_once("./src/updateP.inc.php");
 
 
     </main>
-    <!-- Ajoutez ici vos balises de script, liens vers des fichiers JS, etc. -->
 </body>
 </html>

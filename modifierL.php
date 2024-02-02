@@ -19,7 +19,6 @@ include_once("./src/deletelivreur.inc.php");
     <link rel="stylesheet" href="./css/modif.css">
 
     <title>Modifier Livreur</title>
-    <!-- Ajoutez ici vos balises de style, liens vers des fichiers CSS, etc. -->
 </head>
 <body>
     <header>
@@ -32,9 +31,7 @@ include_once("./src/deletelivreur.inc.php");
     <main>
 
 
-        <!-- Formulaire de mise à jour -->
         <div class="ez">
-                    <!-- Affichez les détails du livreur -->
         <section data-uid="<?= $livreur_id ?>">
             <ul class="right">
                 <li><p class="mail"><?= $livreur['NOMLIVR'] ?></p></li>
@@ -45,15 +42,13 @@ include_once("./src/deletelivreur.inc.php");
         <h1>Modifier profil du livreur</h1>
 
             <form method="POST" action="">
-                <!-- Ajoutez vos champs de formulaire avec les valeurs actuelles du livreur -->
-                <!-- Assurez-vous d'utiliser les vrais noms de colonnes de votre table -->
-                <label>Nom*
+                <label>Nom
                     <input type="text" name="nom" value="<?= $livreur['NOMLIVR'] ?>" required>
                 </label>
-                <label>Prénom*
+                <label>Prénom
                     <input type="text" name="prenom" value="<?= $livreur['PRENOMLIVR'] ?>" required>
                 </label>
-                <label>Date d'embauche*
+                <label>Date d'embauche
                     <input type="date" name="date_embauche" value="<?= $livreur['DATEEMBAUCHLIVR'] ?>" required>
                 </label>
                 <input type="submit" name="submit" value="Modifier les informations" id="ex">
@@ -74,6 +69,5 @@ include_once("./src/deletelivreur.inc.php");
 
     </main>
     <script src="./js/modal.js"></script>
-    <!-- Ajoutez ici vos balises de script, liens vers des fichiers JS, etc. -->
 </body>
 </html>

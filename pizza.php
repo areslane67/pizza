@@ -22,12 +22,9 @@
         include_once("./src/data.inc.php");
         include_once("./src/delete.inc.php");
 
-        // Check if NROPIZZ is set in the URL
         if (isset($_GET['NROPIZZ'])) {
-            // Get the pizza ID from the URL
             $pizza_id = $_GET['NROPIZZ'];
 
-// Fetch the pizza and ingredients data using a single query
 $query = $_bdd->prepare("
     SELECT p.NROPIZZ, p.DESIGNPIZZ, p.TARIFPIZZ, p.URLPIZZ, i.NOMINGR
     FROM pizza p
@@ -38,11 +35,9 @@ $query = $_bdd->prepare("
 $query->execute([$pizza_id]);
 
 
-            // Check if the query was successful
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
             if ($result) {
-                // Display the pizza details
                 echo "
                     <section data-uid=" . $result[0]['NROPIZZ'] . ">
                         <div class=\"left\">
@@ -55,7 +50,6 @@ $query->execute([$pizza_id]);
                     </section>
                 ";
 
-                // Display the ingredients
                 echo "<h3>Ingredients:</h3>";
                 echo "<ul>";
                 foreach ($result as $row) {
@@ -67,11 +61,9 @@ $query->execute([$pizza_id]);
                 }
                 echo "</ul>";
             } else {
-                // Handle the case where the pizza with the given ID was not found
                 echo "Pizza not found.";
             }
         } else {
-            // Handle the case where NROPIZZ is not set in the URL
             echo "Pizza ID not provided.";
         }
         
@@ -80,7 +72,7 @@ $query->execute([$pizza_id]);
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Etes-vous sûr de vouloir supprimer ce livreur ?</h2>
+                <h2>Etes-vous sûr de vouloir supprimer cette pizza ?</h2>
                 <form method="POST" action="">
                     <input type="hidden" name="pizza_id" value="<?php echo $result[0]['NROPIZZ']; ?>">
                     <input type="submit" name="delete" value="Delete" class="byebye">                

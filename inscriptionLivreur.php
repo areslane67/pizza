@@ -14,7 +14,6 @@ include_once("./src/addliv.inc.php");
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/formulaire.css">
     <title>Ajouter un Livreur</title>
-    <!-- Ajoutez ici vos balises de style, liens vers des fichiers CSS, etc. -->
 </head>
 <body>
     <header>
@@ -25,25 +24,21 @@ include_once("./src/addliv.inc.php");
         </ul>
     </header>
     <main>
-        <!-- Formulaire d'ajout -->
         <div class="ez">
             <h1>Ajouter un nouveau livreur</h1>
             <form method="POST" action="">
-                <!-- Ajoutez vos champs de formulaire pour l'ajout d'un livreur -->
-                <!-- Assurez-vous d'utiliser les vrais noms de colonnes de votre table -->
-                <label>Nom*
+                <label>Nom
                     <input type="text" name="nom" required>
                 </label>
-                <label>Prénom*
+                <label>Prénom
                     <input type="text" name="prenom" required>
                 </label>
-                <label>Date d'embauche*
+                <label>Date d'embauche
                     <input type="date" name="dateembauche" required>
                 </label>
                 <input type="submit" name="add" value="Ajouter le livreur" id="ex">
             </form>
         </div>
     </main>
-    <!-- Ajoutez ici vos balises de script, liens vers des fichiers JS, etc. -->
 </body>
 </html>

@@ -20,28 +20,24 @@
     </header>
     <main>
         <?php
-        // Enable error reporting
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        // Include necessary files
         include_once("./src/data.inc.php");
 
 
         try {
-            // Assume the database connection code is present in data.inc.php
             $stmt = $_bdd->prepare("SELECT * FROM livreur");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Display pizza details using data from the database
             foreach ($result as $livreur) {
                 echo "
                 <section data-uid=" . $livreur['NROLIVR'] . ">
                     <ul class=\"right\">
-                        <li>  <p class=\"mail\">" . $livreur['NOMLIVR'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $livreur['PRENOMLIVR'] . "</p> </li>
-                        <li>  <p class=\"phone\">" . $livreur['DATEEMBAUCHLIVR'] . "</p> </li>
+                        <li>  <p class=\"nom\">" . $livreur['NOMLIVR'] . "</p> </li>
+                        <li>  <p class=\"prenom\">" . $livreur['PRENOMLIVR'] . "</p> </li>
+                        <li>  <p class=\"date\">" . $livreur['DATEEMBAUCHLIVR'] . "</p> </li>
                     </ul>
                     <a href=\"modifierL.php?NROLIVR=" . $livreur['NROLIVR'] . "\">modifier</a>
                     
@@ -49,7 +45,6 @@
             ";
             }   
         } catch (Exception $e) {
-            // Print more debug information
             echo "Error: " . $e->getMessage();
         }
         ?>
